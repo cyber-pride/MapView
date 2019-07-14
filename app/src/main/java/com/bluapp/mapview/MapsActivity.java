@@ -1,6 +1,7 @@
 package com.bluapp.mapview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -76,7 +77,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         otheritemAdapter.add(dataSource);
         otherfastAdapter.withOnClickListener((v, adapter, item, position) -> {
             String name = item.getDoctorModel().getName();
-
+            startActivity(new Intent(MapsActivity.this, DetailsActivity.class));
             return false;
         });
     }
